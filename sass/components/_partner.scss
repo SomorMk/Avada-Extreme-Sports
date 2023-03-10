@@ -1,0 +1,30 @@
+@import '../mixins/mixins';
+@import '../variables/variable';
+
+/*=========================================================
+                    Partner css Start
+=========================================================*/
+#partner{
+    padding: 100px 0;
+
+    .partner_item_row{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        .partner_item{
+            text-align: center;
+            img{
+                max-width: 200px;
+                text-align: center;
+                opacity: .6;
+                transition: all linear .2s;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+/*=========================================================
+                    Partner css end
+=========================================================*/

@@ -1,0 +1,75 @@
+@import '../mixins/mixins';
+@import '../variables/variable';
+
+/*=========================================================
+                    News css Start
+=========================================================*/
+#news{
+    padding: 100px 0;
+    background: #F7F7F7;
+
+    .section_head{
+        h6{
+            color: $c1;
+        }
+        h2{
+            color: #222;
+        }
+        p{
+            color: #222;
+            margin-top: 60px;
+        }
+    }
+
+    .news_body{
+        .news_item{
+            .image{
+                img{
+                    border-radius: 15px 15px 0 0;
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+            .text{
+                padding: 40px 30px;
+                background: #fff;
+                text-align: center;
+                padding: 0 25px;
+                position: relative;
+                border-radius: 0 0 15px 15px;
+                &::after{
+                    position: absolute;
+                    content: '';
+                    bottom: 80px;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: #ddd;
+                }
+                h5{
+                    @include fs(#000,28px,700,$f1);
+                    padding-top: 25px;
+                    margin-bottom: 25px;
+                    text-transform: capitalize;
+                }
+                p{
+                    @include fs(#222,18px,400,$f1);
+                    line-height: 30px;
+                    margin-bottom: 25px;
+                    text-transform: capitalize;
+                }
+                a{
+                    @include fs($c1,18px,700,$f1);
+                    padding: 30px 0;
+                    transition: all linear .3s;
+                    &:hover{
+                        color: $c2;
+                    }
+                }
+            }
+        }
+    }
+}
+/*=========================================================
+                    News css end
+=========================================================*/

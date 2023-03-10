@@ -1,0 +1,67 @@
+@import '../mixins/mixins';
+@import '../variables/variable';
+
+/*=========================================================
+                    Footer css Start
+=========================================================*/
+#footer{
+    overflow: hidden !important;
+    .footer_left{
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .footer_right{
+        padding: 80px 80px 80px 80px;
+        padding-left: 80px;
+        background: #0C3543;
+        height: 100%;
+        .logo{
+            img{
+                max-width: 250px;
+            }
+        }
+        .footer_right_top{
+            padding: 40px 0;
+            border-bottom: 1px solid #3D5D69;
+            p{
+                @include fs(#fff,18px,400,$f1);
+                line-height: 32px;
+            }
+        }
+        .footer_right_bottom{
+            margin-top: 40px;
+            h3{
+                @include fs(#fff,30px,700,$f1);
+                position: relative;
+                &:after{
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    bottom: -25px;
+                    width: 50px;
+                    height: 2px;
+                    background: #fff;
+                }
+            }
+            span{
+                @include fs(#fff,18px,400,$f1);
+                line-height: 42px;
+                display: block;
+            }
+        }
+        .footer_copyright_text{
+            @include fs(#ddd,16px,400,$f1);
+            margin-top: 40px;
+            a{
+                color: #fff;
+            }
+        }
+    }
+}
+/*=========================================================
+                    Footer css end
+=========================================================*/

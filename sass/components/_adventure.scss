@@ -1,0 +1,117 @@
+@import '../mixins/mixins';
+@import '../variables/variable';
+
+/*=========================================================
+                    Adventure css Start
+=========================================================*/
+#adventure{
+    padding: 100px 0 100px;
+    background: $c1;
+    position: relative;
+    &::after{
+        position: absolute;
+        content: '';
+        top: -50px;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: url(../../images/download\ \(1\).svg);
+    }
+
+    .adventure_head{
+        text-align: center;
+        img{
+            max-width: 100px;
+            margin-bottom: 30px;
+        }
+        h2{
+            @include fs(#fff,54px,700,$f1);
+            margin-bottom: 60px;
+            text-transform: capitalize;
+        }
+        h5{
+            @include fs(#fff,30px,700,$f1);
+            margin-bottom: 50px;
+            text-transform: capitalize;
+        }
+        .btns{
+            .com_btn{
+                background: #0C3543;
+                border: 1px solid #0C3543;
+                transition: all linear .3s;
+                i{
+                    padding-right: 5px;
+                }
+                &:last-child{
+                    background: transparent;
+                    border: 1px solid #fff;
+                }
+                &:hover{
+                    background: $c2;
+                    border-color: $c2;
+                }
+            }
+        }
+    }
+    .adventure_items{
+        margin-top: 50px;
+        .item{
+            width: 100%;
+            height: 450px;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+            padding: 250px 50px 0;
+            transition: all linear .2s;
+            &::after{
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.4);
+                border-radius: 10px;
+                z-index: -1;
+            }
+            h3{
+                @include fs(#fff,40px,700,$f1);
+                text-transform: capitalize;
+            }
+            h6{
+                @include fs(#fff,24px,400,$f1);
+                text-transform: capitalize;
+                margin-top: 15px;
+            }
+            p{
+                @include fs(#ddd,18px,400,$f1);
+                text-transform: capitalize;
+                margin-top: 50px;
+                position: relative;
+                i{
+                    font-size: 25px;
+                    position: absolute;
+                    top: 50%;
+                    right: 10%;
+                    transform: translateY(-50%);
+                }
+                &::after{
+                    position: absolute;
+                    content: '';
+                    top: -25px;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: #ddd;
+                }
+            }
+            &:hover{
+                transform: scale(1.01);
+                box-shadow: 0 0 5px 0 rgb(43, 41, 41);
+            }
+        }
+    }
+}
+/*=========================================================
+                    Adventure css end
+=========================================================*/

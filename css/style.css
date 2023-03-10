@@ -1,0 +1,862 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #000;
+  z-index: 999;
+}
+.preloader .center {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.com_btn {
+  padding: 18px 45px;
+  background: #FF9600;
+  border-radius: 5px;
+  transition: all linear 0.3s;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.com_btn i {
+  color: #fff;
+  font-size: 15px;
+}
+.com_btn:hover {
+  color: #fff;
+  background: #14B9F1;
+}
+
+.section_head h6 {
+  color: #14B9F1;
+  font-size: 30px;
+  font-weight: 400;
+  font-family: "Yellowtail", cursive;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+.section_head h2 {
+  color: #222;
+  font-size: 54px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: capitalize;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  position: relative;
+}
+.section_head h2::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 90px;
+  height: 2px;
+  background: #A0A0A0;
+}
+.section_head p {
+  color: #222;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 32px;
+  text-transform: capitalize;
+}
+
+/*=========================================================
+                    Common css end
+=========================================================*/
+/*=========================================================
+                    Menu css Start
+=========================================================*/
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  padding: 10px 0;
+  transition: all linear 0.2s;
+}
+.navbar .navbar-brand {
+  width: 250px;
+}
+.navbar .navbar-brand img {
+  max-width: 85%;
+}
+.navbar .navbar-toggler {
+  border: none;
+}
+.navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 0;
+}
+.navbar.menu_fix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  padding: 2px 0;
+  background: #0C3543;
+}
+.navbar .navbar-nav .nav-item {
+  position: relative;
+}
+.navbar .navbar-nav .nav-item .nav-link {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: capitalize;
+  margin: 0 15px;
+  transition: all linear 0.3s;
+}
+.navbar .navbar-nav .nav-item .nav-link.active {
+  color: #FF9600;
+}
+.navbar .navbar-nav .nav-item .nav-link:hover {
+  color: #FF9600;
+}
+.navbar .navbar-nav .nav-item ul {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 220px;
+  background: #fff;
+  border-radius: 5px;
+  transition: all linear 0.3s;
+}
+.navbar .navbar-nav .nav-item ul li {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20px;
+  text-transform: capitalize;
+  border-bottom: 1px solid #f1f1f1;
+}
+.navbar .navbar-nav .nav-item ul li a {
+  color: #212934;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.navbar .navbar-nav .nav-item ul li:hover {
+  background: #F9F9FB;
+}
+.navbar .navbar-nav .nav-item:hover ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+#nav-icon1,
+#nav-icon2,
+#nav-icon3,
+#nav-icon4 {
+  width: 25px;
+  height: 40px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon1 span,
+#nav-icon3 span,
+#nav-icon4 span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #FF9600;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+#nav-icon1 span:nth-child(1) {
+  top: 10px;
+}
+#nav-icon1 span:nth-child(2) {
+  top: 18px;
+}
+#nav-icon1 span:nth-child(3) {
+  top: 26px;
+}
+
+#nav-icon1.open span:nth-child(1) {
+  top: 18px;
+  transform: rotate(135deg);
+}
+#nav-icon1.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+#nav-icon1.open span:nth-child(3) {
+  top: 18px;
+  transform: rotate(-135deg);
+}
+
+/*=========================================================
+                    Menu css end
+=========================================================*/
+/*=========================================================
+                    Banner css Start
+=========================================================*/
+#banner {
+  padding: 250px 0 220px;
+  position: relative;
+}
+#banner .banner_svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+}
+#banner .banner_text {
+  text-align: center;
+}
+#banner .banner_text h1 {
+  color: #fff;
+  font-size: 72px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-bottom: 40px;
+}
+
+/*=========================================================
+                    Banner css end
+=========================================================*/
+/*=========================================================
+                    Join Us css Start
+=========================================================*/
+#join-us {
+  padding: 90px 0;
+}
+#join-us .join_left h6 {
+  color: #14B9F1;
+  font-size: 30px;
+  font-weight: 400;
+  font-family: "Yellowtail", cursive;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+#join-us .join_left h2 {
+  color: #222;
+  font-size: 54px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: capitalize;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  position: relative;
+}
+#join-us .join_left h2::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 90px;
+  height: 2px;
+  background: #A0A0A0;
+}
+#join-us .join_left p {
+  color: #222;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 32px;
+  text-transform: capitalize;
+}
+#join-us .join_left ul {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+#join-us .join_left ul li {
+  padding-left: 30px;
+  line-height: 40px;
+  position: relative;
+  color: #222;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+#join-us .join_left ul li i {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#join-us .join_right ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#join-us .join_right ul li {
+  margin: 0 12px;
+}
+#join-us .join_right ul li img {
+  border-radius: 10px;
+}
+
+/*=========================================================
+                    Join Us css end
+=========================================================*/
+/*=========================================================
+                    Counter css Start
+=========================================================*/
+#counter {
+  padding: 50px 0 100px;
+}
+#counter .counter_item {
+  padding: 65px 0;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+#counter .counter_item::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../../images/stat-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#counter .counter_item h2 {
+  color: #222;
+  font-size: 80px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-bottom: 15px;
+}
+#counter .counter_item p {
+  color: #222;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/*=========================================================
+                    Counter css end
+=========================================================*/
+/*=========================================================
+                    Activity css Start
+=========================================================*/
+#activity {
+  padding: 100px 0;
+  background: #0C3543;
+}
+#activity .section_head h6 {
+  color: #FF9600;
+}
+#activity .section_head h2 {
+  color: #fff;
+}
+#activity .section_head p {
+  color: #fff;
+  margin-top: 60px;
+}
+#activity .activity_item {
+  margin-bottom: 24px;
+  transition: all linear 0.3s;
+  border-radius: 20px;
+  overflow: hidden;
+}
+#activity .activity_item .image {
+  overflow: hidden;
+}
+#activity .activity_item .image img {
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  max-width: 100%;
+  transition: all linear 0.3s;
+}
+#activity .activity_item .text {
+  text-align: center;
+  padding: 40px 0;
+  background: #0F4152;
+  border-radius: 0 0 20px 20px;
+}
+#activity .activity_item .text h2 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  transition: all linear 0.3s;
+}
+#activity .activity_item .text p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: capitalize;
+}
+#activity .activity_item:hover {
+  border-radius: 20px;
+}
+#activity .activity_item:hover .image img {
+  transform: scale(1.05);
+  border-radius: 20px 20px 0 0;
+}
+#activity .activity_item:hover .text h2 {
+  color: #FF9600;
+}
+#activity .activity_bottom_head {
+  margin-top: 60px;
+  position: relative;
+}
+#activity .activity_bottom_head::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: url(../../images/bg-sports-1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#activity .activity_bottom_head h2 {
+  color: #fff;
+  font-size: 160px;
+  font-weight: 400;
+  font-family: "Arizonia", cursive;
+  text-align: center;
+}
+
+/*=========================================================
+                    Activity css end
+=========================================================*/
+/*=========================================================
+                    Adventure css Start
+=========================================================*/
+#adventure {
+  padding: 100px 0 100px;
+  background: #FF9600;
+  position: relative;
+}
+#adventure::after {
+  position: absolute;
+  content: "";
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: url(../../images/download\ \(1\).svg);
+}
+#adventure .adventure_head {
+  text-align: center;
+}
+#adventure .adventure_head img {
+  max-width: 100px;
+  margin-bottom: 30px;
+}
+#adventure .adventure_head h2 {
+  color: #fff;
+  font-size: 54px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-bottom: 60px;
+  text-transform: capitalize;
+}
+#adventure .adventure_head h5 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-bottom: 50px;
+  text-transform: capitalize;
+}
+#adventure .adventure_head .btns .com_btn {
+  background: #0C3543;
+  border: 1px solid #0C3543;
+  transition: all linear 0.3s;
+}
+#adventure .adventure_head .btns .com_btn i {
+  padding-right: 5px;
+}
+#adventure .adventure_head .btns .com_btn:last-child {
+  background: transparent;
+  border: 1px solid #fff;
+}
+#adventure .adventure_head .btns .com_btn:hover {
+  background: #14B9F1;
+  border-color: #14B9F1;
+}
+#adventure .adventure_items {
+  margin-top: 50px;
+}
+#adventure .adventure_items .item {
+  width: 100%;
+  height: 450px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  padding: 250px 50px 0;
+  transition: all linear 0.2s;
+}
+#adventure .adventure_items .item::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  z-index: -1;
+}
+#adventure .adventure_items .item h3 {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: capitalize;
+}
+#adventure .adventure_items .item h6 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: capitalize;
+  margin-top: 15px;
+}
+#adventure .adventure_items .item p {
+  color: #ddd;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: capitalize;
+  margin-top: 50px;
+  position: relative;
+}
+#adventure .adventure_items .item p i {
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+}
+#adventure .adventure_items .item p::after {
+  position: absolute;
+  content: "";
+  top: -25px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+}
+#adventure .adventure_items .item:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 5px 0 rgb(43, 41, 41);
+}
+
+/*=========================================================
+                    Adventure css end
+=========================================================*/
+/*=========================================================
+                    Choose css Start
+=========================================================*/
+#choose {
+  padding: 100px 0;
+}
+#choose .choose_head {
+  text-align: center;
+}
+#choose .choose_head h6 {
+  color: #14B9F1;
+  font-size: 30px;
+  font-weight: 400;
+  font-family: "Yellowtail", cursive;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+#choose .choose_head h2 {
+  color: #222;
+  font-size: 54px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: capitalize;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  position: relative;
+}
+#choose .choose_head h2::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 2px;
+  background: #A0A0A0;
+}
+#choose .choose_body {
+  margin-top: 10px;
+}
+#choose .choose_body .choose_item {
+  text-align: center;
+}
+#choose .choose_body .choose_item .image {
+  margin-bottom: 50px;
+}
+#choose .choose_body .choose_item .image img {
+  max-width: 130px;
+  border-radius: 50%;
+}
+#choose .choose_body .choose_item .text {
+  padding: 0 10px;
+}
+#choose .choose_body .choose_item .text h6 {
+  color: #222;
+  font-size: 24px;
+  font-weight: 900;
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 30px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+#choose .choose_body .choose_item .text p {
+  color: #222;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 32px;
+  text-transform: capitalize;
+}
+
+/*=========================================================
+                    Choose css end
+=========================================================*/
+/*=========================================================
+                    News css Start
+=========================================================*/
+#news {
+  padding: 100px 0;
+  background: #F7F7F7;
+}
+#news .section_head h6 {
+  color: #FF9600;
+}
+#news .section_head h2 {
+  color: #222;
+}
+#news .section_head p {
+  color: #222;
+  margin-top: 60px;
+}
+#news .news_body .news_item .image img {
+  border-radius: 15px 15px 0 0;
+  width: 100%;
+  max-width: 100%;
+}
+#news .news_body .news_item .text {
+  padding: 40px 30px;
+  background: #fff;
+  text-align: center;
+  padding: 0 25px;
+  position: relative;
+  border-radius: 0 0 15px 15px;
+}
+#news .news_body .news_item .text::after {
+  position: absolute;
+  content: "";
+  bottom: 80px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+}
+#news .news_body .news_item .text h5 {
+  color: #000;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  padding-top: 25px;
+  margin-bottom: 25px;
+  text-transform: capitalize;
+}
+#news .news_body .news_item .text p {
+  color: #222;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 30px;
+  margin-bottom: 25px;
+  text-transform: capitalize;
+}
+#news .news_body .news_item .text a {
+  color: #FF9600;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  padding: 30px 0;
+  transition: all linear 0.3s;
+}
+#news .news_body .news_item .text a:hover {
+  color: #14B9F1;
+}
+
+/*=========================================================
+                    News css end
+=========================================================*/
+/*=========================================================
+                    Partner css Start
+=========================================================*/
+#partner {
+  padding: 100px 0;
+}
+#partner .partner_item_row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#partner .partner_item_row .partner_item {
+  text-align: center;
+}
+#partner .partner_item_row .partner_item img {
+  max-width: 200px;
+  text-align: center;
+  opacity: 0.6;
+  transition: all linear 0.2s;
+}
+#partner .partner_item_row .partner_item img:hover {
+  opacity: 1;
+}
+
+/*=========================================================
+                    Partner css end
+=========================================================*/
+/*=========================================================
+                    Footer css Start
+=========================================================*/
+#footer {
+  overflow: hidden !important;
+}
+#footer .footer_left {
+  width: 100%;
+  height: 100%;
+}
+#footer .footer_left img {
+  width: 100%;
+  height: 100%;
+}
+#footer .footer_right {
+  padding: 80px 80px 80px 80px;
+  padding-left: 80px;
+  background: #0C3543;
+  height: 100%;
+}
+#footer .footer_right .logo img {
+  max-width: 250px;
+}
+#footer .footer_right .footer_right_top {
+  padding: 40px 0;
+  border-bottom: 1px solid #3D5D69;
+}
+#footer .footer_right .footer_right_top p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 32px;
+}
+#footer .footer_right .footer_right_bottom {
+  margin-top: 40px;
+}
+#footer .footer_right .footer_right_bottom h3 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "IBM Plex Sans", sans-serif;
+  position: relative;
+}
+#footer .footer_right .footer_right_bottom h3:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -25px;
+  width: 50px;
+  height: 2px;
+  background: #fff;
+}
+#footer .footer_right .footer_right_bottom span {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 42px;
+  display: block;
+}
+#footer .footer_right .footer_copyright_text {
+  color: #ddd;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-top: 40px;
+}
+#footer .footer_right .footer_copyright_text a {
+  color: #fff;
+}
+
+/*=========================================================
+                    Footer css end
+=========================================================*//*# sourceMappingURL=style.css.map */

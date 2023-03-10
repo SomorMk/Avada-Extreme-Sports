@@ -1,0 +1,38 @@
+@import '../mixins/mixins';
+@import '../variables/variable';
+
+/*=========================================================
+                    Counter css Start
+=========================================================*/
+#counter{
+    padding: 50px 0 100px;
+
+    .counter_item{
+        padding: 65px 0;
+        text-align: center;
+        border-radius: 10px;
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../../images/stat-bg.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        h2{
+            @include fs(#222,80px,700,$f1);
+            margin-bottom: 15px;
+        }
+        p{
+            @include fs(#222,18px,400,$f1);
+        }
+    }
+}
+/*=========================================================
+                    Counter css end
+=========================================================*/

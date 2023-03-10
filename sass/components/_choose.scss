@@ -1,0 +1,66 @@
+@import '../mixins/mixins';
+@import '../variables/variable';
+
+/*=========================================================
+                    Choose css Start
+=========================================================*/
+#choose{
+    padding: 100px 0;
+
+    .choose_head{
+        text-align: center;
+        h6{
+            @include fs(#14B9F1,30px,400,$f2);
+            margin-bottom: 20px;
+            text-transform: capitalize;
+        }
+        h2{
+            @include fs(#222,54px,700,$f1);
+            text-transform: capitalize;
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            &::after{
+                position: absolute;
+                content: '';
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90px;
+                height: 2px;
+                background: #A0A0A0;
+            }
+        }
+    }
+
+    .choose_body{
+        margin-top: 10px;
+        .choose_item{
+            text-align: center;
+            .image{
+                margin-bottom: 50px;
+                img{
+                    max-width: 130px;
+                    border-radius: 50%;
+                }
+            }
+            .text{
+                padding: 0 10px;
+                h6{
+                    @include fs(#222,24px,900,$f1);
+                    line-height: 30px;
+                    margin-bottom: 20px;
+                    text-transform: capitalize;
+                }
+                p{
+                    @include fs(#222,18px,400,$f1);
+                    line-height: 32px;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}
+/*=========================================================
+                    Choose css end
+=========================================================*/
