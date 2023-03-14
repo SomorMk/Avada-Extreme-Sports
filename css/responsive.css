@@ -1,4 +1,8 @@
-@media (min-width: 1400px) {}
+@media (min-width: 1400px) {
+    #join-us .join_right ul {
+        flex-wrap: nowrap;
+    }
+}
 
 @media (min-width: 1200px) and (max-width: 1399.98px) {
     #join-us .join_right {
